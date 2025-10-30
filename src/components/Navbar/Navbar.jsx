@@ -15,7 +15,7 @@ export default function Header() {
 
   const close = () => setOpen(false);
 
-  // Stílusfunkció az asztali NavLink-hez az aktív állapot kezelésével
+  // Stílusfunkció, asztali 
   const getNavLinkClass = ({ isActive }) =>
     `text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-1 transition-colors ${
       isActive
@@ -23,7 +23,7 @@ export default function Header() {
         : "text-foreground/80 hover:text-foreground"
     }`;
     
-  // Stílusfunkció a mobil NavLink-hez
+  // Stílusfunkció a mobil 
   const getMobileNavLinkClass = ({ isActive }) =>
     `block py-2 text-lg transition-colors ${
       isActive
@@ -38,7 +38,7 @@ export default function Header() {
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
-        {/* LOGÓ - NavLink-ként a főoldalra */}
+        
         <NavLink to="/" className="inline-flex items-center gap-2 font-extrabold text-lg tracking-tight">
           <span className="inline-grid place-items-center w-8 h-8 rounded-full bg-primary text-white">
             <Coffee className="w-4 h-4" aria-hidden="true" />
@@ -46,16 +46,16 @@ export default function Header() {
           ICE COFFEE
         </NavLink>
 
-        {/* ASZTALI NAVIGÁCIÓ ÉS VÁSÁRLÁS GOMB (md mérettől látható) */}
+        {/* ASZTAL  */}
         <div className="hidden md:flex items-center gap-8">
-          {/* Linkek NavLink-kel és to-val */}
+        
           <NavLink to="/" className={getNavLinkClass} end>Kezdőlap</NavLink>
           <NavLink to="/why" className={getNavLinkClass}>Miért</NavLink>
           <NavLink to="/products" className={getNavLinkClass}>Termékek</NavLink>
           <NavLink to="/about" className={getNavLinkClass}>Történet</NavLink>
           <NavLink to="/newsletter" className={getNavLinkClass}>Hírlevél</NavLink>
           
-          {/* Vásárlás gomb - NavLink-ként */}
+          {/* GOMB */}
           <NavLink
             id="buy-btn"
             to="/products"
@@ -65,7 +65,7 @@ export default function Header() {
           </NavLink>
         </div>
 
-        {/* MOBIL MENÜ GOMB (md méret alatt látható) */}
+        {/* MOBIL MENÜ GOMB  */}
         <button 
           aria-label="Menü" 
           className="md:hidden p-2 rounded-lg border hover:bg-secondary" 
@@ -75,11 +75,11 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* MOBIL MENÜ TARTALOM (Csak ha nyitva van és md méret alatt) */}
+      {/* MOBIL MENÜ */}
       {open && (
-        <div className="md:hidden border-t bg-background">
-          <div className="max-w-7xl mx-auto px-4 py-3 grid gap-2">
-            {/* Mobil linkek NavLink-kel */}
+        <div className="md:hidden border-t bg-white">
+          <div className="max-w-7xl mx-auto px-4 py-3 grid place-items-center text-center gap-2">
+           
             <NavLink to="/" onClick={close} className={getMobileNavLinkClass} end>Kezdőlap</NavLink>
             <NavLink to="/why" onClick={close} className={getMobileNavLinkClass}>Miért</NavLink>
             <NavLink to="/products" onClick={close} className={getMobileNavLinkClass}>Termékek</NavLink>
@@ -91,7 +91,7 @@ export default function Header() {
               id="buy-btn"
               to="/products"
               onClick={close}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-black px-4 py-2 text-sm shadow-sm hover:shadow-lg transition-all mt-4"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-black px-6 py-2 text-sm shadow-sm hover:shadow-lg transition-all mt-4"
             >
               <ShoppingBag className="w-4 h-4" aria-hidden="true" /> Vásárlás
             </NavLink>

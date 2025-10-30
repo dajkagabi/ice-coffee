@@ -66,7 +66,7 @@ const ingredientVariants = {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section id="hero" className="relative min-h-screen pt-16 flex items-center justify-center overflow-hidden bg-white">
       
       <motion.div
         initial={{ scale: 1.2, opacity: 0.5 }}
