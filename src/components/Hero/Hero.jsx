@@ -74,7 +74,13 @@ export default function Hero() {
         transition={{ duration: 1.5 }}
         className="absolute inset-0 z-0 flex items-center justify-center opacity-80"
       >
-              </motion.div>
+        <img 
+          src={BackgroundSplash} 
+          alt="Háttér" 
+          className="w-full h-full object-cover  opacity-40"
+         
+        />
+      </motion.div>
 
       <motion.img
         src={IceImg}
